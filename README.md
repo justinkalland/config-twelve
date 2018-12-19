@@ -81,7 +81,7 @@ module.exports = {
 }
 ```
 
-For more examples of the config file, see the [config used for the integration tests]().
+For more examples of the config file, see the [config used for the integration tests](https://github.com/justinkalland/config-twelve/blob/master/tests/integration-test-config.js).
 
 ## Usage
 Every variable becomes a property on the config object:
