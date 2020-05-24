@@ -1,6 +1,6 @@
 {
   "name": "config-twelve",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Node.js configuration with env variables that adheres to the twelve-factor methodology.",
   "repository": "github:justinkalland/config-twelve",
   "homepage": "https://github.com/justinkalland/config-twelve#readme",
