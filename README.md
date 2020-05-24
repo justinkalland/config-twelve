@@ -1,7 +1,14 @@
 # config-twelve
-Simple Node.js configuration with env variables that adheres to the [twelve-factor methodology](https://12factor.net/).
+Node.js configuration with env variables that adheres to the [twelve-factor methodology](https://12factor.net/).
 
 The [third factor](https://12factor.net/config) states config should be stored in the environment. This library makes that processor easier. You define the variables you want to use in a config file. Supports defaults and casts to various types.
+
+This improves over the popular [dotenv])(https://www.npmjs.com/package/dotenv) by
+- Allowing the use of types (think TypeScript for env vars)
+- Ability to set default values
+- Requirement to define what environment variables your application will use
+- Providing an easy interface
+- One location for new developers to see all config needed
 
 ## Setup
 Install with NPM

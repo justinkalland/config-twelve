@@ -1,7 +1,7 @@
 {
   "name": "config-twelve",
   "version": "0.1.0",
-  "description": "Simple Node.js configuration with env variables that adheres to the twelve-factor methodology.",
+  "description": "Node.js configuration with env variables that adheres to the twelve-factor methodology.",
   "repository": "github:justinkalland/config-twelve",
   "homepage": "https://github.com/justinkalland/config-twelve#readme",
   "bugs": {
@@ -18,8 +18,8 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-string": "^1.5.0",
-    "eslint-config-jk": "^1.3.0",
-    "lodash": "^4.17.11",
+    "eslint-config-jk": "^1.6.0",
+    "lodash": "^4.17.15",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "sinon": "^7.1.1"
