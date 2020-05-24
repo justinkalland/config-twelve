@@ -14,7 +14,15 @@ module.exports = {
   BOOLEAN_DEFAULT_TRUE_AND_SET_FALSE: { type: 'boolean', default: true },
   BOOLEAN_DEFAULT_FALSE_AND_SET_TRUE: { type: 'boolean', default: false },
   BOOLEAN_DEFAULT_TRUE_AND_MISSING: { type: 'boolean', default: true },
-  BOOLEAN_DEFAULT_FALSE_AND_MISSING: { type: 'boolean', default: false }
+  BOOLEAN_DEFAULT_FALSE_AND_MISSING: { type: 'boolean', default: false },
+  // sss
+  DOTENV_STRING: 'string',
+  DOTENV_STRING_DEFAULT_AND_SET: { type: 'string', default: 'foo' },
+  DOTENV_NUMBER: 'number',
+  DOTENV_NUMBER_DEFAULT_AND_SET: { type: 'number', default: 356 },
+  DOTENV_BOOLEAN: 'boolean',
+  DOTENV_BOOLEAN_DEFAULT_TRUE_AND_SET_FALSE: { type: 'boolean', default: true },
+  DOTENV_BOOLEAN_DEFAULT_FALSE_AND_SET_TRUE: { type: 'boolean', default: false }
 }
 
 process.env = _.merge(process.env, {

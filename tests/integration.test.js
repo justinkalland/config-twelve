@@ -7,16 +7,22 @@ let config
 describe('Integration', () => {
   before(() => {
     fs.copyFileSync(path.join(__dirname, 'integration-test-config.js'), path.join(appRoot, 'config.js'))
+    fs.copyFileSync(path.join(__dirname, 'dotenv-test-config.env'), path.join(appRoot, '.env'))
     config = require('../')
   })
 
   after(() => {
     fs.unlinkSync(path.join(appRoot, 'config.js'))
+    fs.unlinkSync(path.join(appRoot, '.env'))
   })
 
   describe('string', () => {
     it('regular', () => {
       expect(config.STRING).to.equal('foobar')
+    })
+
+    it('DOTENV regular', () => {
+      expect(config.DOTENV_STRING).to.equal('foobar')
     })
 
     it('not required', () => {
@@ -25,6 +31,10 @@ describe('Integration', () => {
 
     it('default and set', () => {
       expect(config.STRING_DEFAULT_AND_SET).to.equal('bar')
+    })
+
+    it('DOTENV default and set', () => {
+      expect(config.DOTENV_STRING_DEFAULT_AND_SET).to.equal('bar')
     })
 
     it('default and mising', () => {
@@ -37,12 +47,20 @@ describe('Integration', () => {
       expect(config.NUMBER).to.equal(123)
     })
 
+    it('DOTENV regular', () => {
+      expect(config.DOTENV_NUMBER).to.equal(123)
+    })
+
     it('not required', () => {
       expect(config.NUMBER_NOT_REQUIRED).to.equal(0)
     })
 
     it('default and set', () => {
       expect(config.NUMBER_DEFAULT_AND_SET).to.equal(123)
+    })
+
+    it('DOTENV default and set', () => {
+      expect(config.DOTENV_NUMBER_DEFAULT_AND_SET).to.equal(123)
     })
 
     it('default and mising', () => {
@@ -55,6 +73,10 @@ describe('Integration', () => {
       expect(config.BOOLEAN).to.equal(false)
     })
 
+    it('DOTENV regular', () => {
+      expect(config.DOTENV_BOOLEAN).to.equal(false)
+    })
+
     it('not required', () => {
       expect(config.BOOLEAN_NOT_REQUIRED).to.equal(false)
     })
@@ -63,8 +85,16 @@ describe('Integration', () => {
       expect(config.BOOLEAN_DEFAULT_TRUE_AND_SET_FALSE).to.equal(false)
     })
 
+    it('DOTENV default true and set false', () => {
+      expect(config.DOTENV_BOOLEAN_DEFAULT_TRUE_AND_SET_FALSE).to.equal(false)
+    })
+
     it('default false and set true', () => {
       expect(config.BOOLEAN_DEFAULT_FALSE_AND_SET_TRUE).to.equal(true)
+    })
+
+    it('DOTENV default false and set true', () => {
+      expect(config.DOTENV_BOOLEAN_DEFAULT_FALSE_AND_SET_TRUE).to.equal(true)
     })
 
     it('default true and missing', () => {

@@ -7,22 +7,24 @@
   "bugs": {
     "url": "https://github.com/justinkalland/config-twelve/issues"
   },
-  "author": "Justin Kalland <justin@kalland.ch>",
+  "author": "Justin Kalland <justin@kalland.com>",
   "license": "MIT",
   "scripts": {
     "test": "nyc mocha tests",
     "lint": "eslint . || true"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-string": "^1.5.0",
     "eslint-config-jk": "^1.6.0",
     "lodash": "^4.17.15",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "sinon": "^7.1.1"
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.2"
   },
   "husky": {
     "hooks": {
