@@ -1,7 +1,8 @@
 const Config = require('./lib/config')
 const path = require('path')
-const appRoot = path.dirname(require.main.filename)
-const settings = require(path.join(appRoot, 'config.js'))
-require('dotenv').config({ path: path.join(appRoot, '.env') })
+const configFile = path.resolve(process.cwd(), 'config.js')
+const dotenvFile = path.resolve(process.cwd(), '.env')
+const settings = require(configFile)
+require('dotenv').config({ path: dotenvFile })
 
 module.exports = new Config(settings)

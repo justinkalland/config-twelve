@@ -1,19 +1,20 @@
 const expect = require('chai').expect
 const path = require('path')
+const configFile = path.resolve(process.cwd(), 'config.js')
+const dotenvFile = path.resolve(process.cwd(), '.env')
 const fs = require('fs')
-const appRoot = path.dirname(require.main.filename)
 let config
 
 describe('Integration', () => {
   before(() => {
-    fs.copyFileSync(path.join(__dirname, 'integration-test-config.js'), path.join(appRoot, 'config.js'))
-    fs.copyFileSync(path.join(__dirname, 'dotenv-test-config.env'), path.join(appRoot, '.env'))
+    fs.copyFileSync(path.join(__dirname, 'integration-test-config.js'), configFile)
+    fs.copyFileSync(path.join(__dirname, 'dotenv-test-config.env'), dotenvFile)
     config = require('../')
   })
 
   after(() => {
-    fs.unlinkSync(path.join(appRoot, 'config.js'))
-    fs.unlinkSync(path.join(appRoot, '.env'))
+    fs.unlinkSync(configFile)
+    fs.unlinkSync(dotenvFile)
   })
 
   describe('string', () => {
